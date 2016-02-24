@@ -147,18 +147,15 @@ class Maze
     num_columns = @map.length
     num_rows = @map[0].length
     for c in (1...num_columns-1)
+      r = 0
       if c % 2 == 1
         r = 2
-        while (r < num_rows-1) do
-          @map[c][r] = Random.rand(2).to_s
-          r += 2
-        end
       else
         r = 1
-        while (r < num_rows-1) do
-          @map[c][r] = Random.rand(2).to_s
-          r += 2
-        end
+      end
+      while (r < num_rows-1) do
+        @map[c][r] = Random.rand(2).to_s
+        r += 2
       end
     end
   end
